@@ -1240,6 +1240,7 @@ static const char *strDNSSeed[][2] = {
     {"cryptonex.org", "node-singapore.cryptonex.org"},
     {"cryptonex.org", "node-paris.cryptonex.org"},
     {"cryptonex.org", "node-bangalore.cryptonex.org"},
+    {"cryptonex.org", "node-helsinki.cryptonex.org"},
 };
 
 void ThreadDNSAddressSeed(void* parg)

@@ -2023,6 +2023,12 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig) c
     // These are checks that are independent of context
     // that can be verified before saving an orphan block.
 
+    if ("1056c62e99bcc2abc46e52ba369811b9a092c94bc441dcf39fcffae5fb50ee20" == GetHash().ToString())
+        return DoS(100, error("CheckBlock() : size limits failed"));
+
+    if ("9be9606ec7cea769e299118b7d61a3d06742588f3ddb55017d4793de9eb6f408" == GetHash().ToString())
+        return DoS(100, error("CheckBlock() : size limits failed"));
+
     // Size limits
     if (vtx.empty() || vtx.size() > MAX_BLOCK_SIZE || ::GetSerializeSize(*this, SER_NETWORK, PROTOCOL_VERSION) > MAX_BLOCK_SIZE)
         return DoS(100, error("CheckBlock() : size limits failed"));
